@@ -5,7 +5,7 @@
     <title>angular bootstrap</title>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
     <script src="lib/angular/angular.js"></script>
-
+    <script src="lib/angular/angular-sanitize.js"></script>
     <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -25,8 +25,11 @@
 <div class="down">
     <div >
         <uib-tabset active="active">
-            <uib-tab index="$index + 1" ng-repeat="tab in tabs" heading="{{tab.title}}" disable="tab.disabled">
-                {{tab.content}}
+            <uib-tab heading="Today's Forecast" >
+                    <div ng-bind-html="tab1content"></div>
+            </uib-tab>
+            <uib-tab heading="Five Day Forecast" >
+                <div ng-bind-html="tab2content"></div>
             </uib-tab>
         </uib-tabset>
     </div>
